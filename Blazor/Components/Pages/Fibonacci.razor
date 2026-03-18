@@ -1,0 +1,21 @@
+﻿@page "/fibonacci"
+@rendermode InteractiveServer
+
+@using System.Numerics;
+
+<PageTitle>Fibonacci</PageTitle>
+<h3>Fibonacci</h3>
+
+<div class="fibonacci">
+	<input type="number" @bind="number" @bind:after="Calculate" />
+	<div id="fibonacci"> @(results.Any() ? results.Last().ToString() : "0") </div>
+</div>
+
+<ol>
+	@{
+		foreach (BigInteger i in results)
+		{
+			<li>@i</li>
+		}
+	}
+</ol>

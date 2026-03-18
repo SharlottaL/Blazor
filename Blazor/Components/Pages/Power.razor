@@ -1,0 +1,20 @@
+﻿@page "/power"
+@rendermode InteractiveServer
+
+<PageTitle>Power</PageTitle>
+<h3>Power</h3>
+
+<div class="power">
+	<input type="number" @bind="a" @bind:after="Calculate" />
+	<input type="number" @bind="n" @bind:after="Calculate" />
+	<div id="power"> @result </div>
+</div>
+
+<ol>
+	@{
+		foreach (long i in results)
+		{
+			<li>@i</li>
+		}
+	}
+</ol>
