@@ -1,0 +1,12 @@
+﻿@page "/dec2hex"
+@rendermode InteractiveServer
+
+@using System.Numerics;
+
+<PageTitle>Dec2Hex</PageTitle>
+<h3>Dec2Hex</h3>
+
+<div class="dec2hex">
+	<input type="number" @bind="dec" @bind:after="Calculate" />
+	<div id="dec2hex"> @hex </div>
+</div>

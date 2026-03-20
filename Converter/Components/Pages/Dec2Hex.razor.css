@@ -1,0 +1,10 @@
+﻿.dec2hex {
+    width: 44%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#dec2hex {
+    font-size: 24px;
+    font-weight: bold;
+}

@@ -1,0 +1,10 @@
+﻿.dec2bin {
+    width: 44%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#dec2bin {
+    font-size: 24px;
+    font-weight: bold;
+}

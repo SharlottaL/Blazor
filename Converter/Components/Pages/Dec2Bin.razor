@@ -1,0 +1,12 @@
+﻿@page "/dec2bin"
+@rendermode InteractiveServer
+
+@using System.Numerics;
+
+<PageTitle>Dec2Bin</PageTitle>
+<h3>Dec2Bin</h3>
+
+<div class="dec2bin">
+	<input type="number" @bind="dec" @bind:after="Calculate" />
+	<div id="dec2bin"> @bin </div>
+</div>
