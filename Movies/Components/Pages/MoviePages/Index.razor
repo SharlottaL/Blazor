@@ -34,9 +34,16 @@
 
 <QuickGrid Class="table" Items="FilteredMovies" Pagination="pagination">
     @* <PropertyColumn Property="movie => movie.Title" ></PropertyColumn> *@
-    <TemplateColumn Title="Title"><a href="@($"movies/details?id={context.Id}")">@context.Title</a></TemplateColumn>
-    <PropertyColumn Property="movie => movie.ReleaseDate" />
-    <PropertyColumn Property="movie => movie.Genre" />
+    <TemplateColumn 
+        Sortable="true"
+        InitialSortDirection="SortDirection.Ascending"
+        IsDefaultSortColumn="true"
+        SortBy="sortBy"
+        Title="Title">
+        <a href="@($"movies/details?id={context.Id}")">@context.Title</a>
+        </TemplateColumn>
+    <PropertyColumn Sortable="true" Property="movie => movie.ReleaseDate" />
+    <PropertyColumn Sortable="true" Property="movie => movie.Genre" />
 
     @* <TemplateColumn Context="movie">
         <a href="@($"movies/edit?id={movie.Id}")">Edit</a> |
@@ -52,6 +59,7 @@
     string? TitleFilter { get; set; }
 
     int ItemsPerPage { get; set; }
+    GridSort<Movie> sortBy = GridSort<Movie>.ByAscending(p => p.Title);
 
     PaginationState pagination = new PaginationState {  };
 
@@ -61,6 +69,6 @@
     }
 
     public async ValueTask DisposeAsync() => await context.DisposeAsync();
-    IQueryable<Movie> FilteredMovies => context.Movie.Where(m => m.Title.Contains(TitleFilter ??
-    string.Empty));
+    IQueryable<Movie> FilteredMovies => 
+    context.Movie.Where(m => m.Title.Contains(TitleFilter ?? string.Empty));
 }
