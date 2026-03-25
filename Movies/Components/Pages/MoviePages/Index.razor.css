@@ -6,3 +6,9 @@
     width:32px;
     height:25px;
 }
+::deep .movie-title{
+    width:50%;
+}
+::deep .reliase-date, .genre{
+    width:25%;
+}

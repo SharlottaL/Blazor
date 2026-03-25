@@ -31,19 +31,20 @@
     </select>
 </div>
 
-
+<div>
 <QuickGrid Class="table" Items="FilteredMovies" Pagination="pagination">
     @* <PropertyColumn Property="movie => movie.Title" ></PropertyColumn> *@
     <TemplateColumn 
         Sortable="true"
+        Class="movie-title"
         InitialSortDirection="SortDirection.Ascending"
         IsDefaultSortColumn="true"
         SortBy="sortBy"
         Title="Title">
         <a href="@($"movies/details?id={context.Id}")">@context.Title</a>
         </TemplateColumn>
-    <PropertyColumn Sortable="true" Property="movie => movie.ReleaseDate" />
-    <PropertyColumn Sortable="true" Property="movie => movie.Genre" />
+    <PropertyColumn Class="release-date" Sortable="true" Property="movie => movie.ReleaseDate" />
+    <PropertyColumn Class="genre" Sortable="true" Property="movie => movie.Genre" />
 
     @* <TemplateColumn Context="movie">
         <a href="@($"movies/edit?id={movie.Id}")">Edit</a> |
@@ -52,7 +53,7 @@
     </TemplateColumn> *@
 </QuickGrid>
 <Paginator State="pagination" />
-
+</div>
 @code {
     private MoviesContext context = default!;
     [SupplyParameterFromQuery]
