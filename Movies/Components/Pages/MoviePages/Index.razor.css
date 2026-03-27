@@ -1,14 +1,17 @@
-﻿.controls {
-    display:flex;
-    justify-content:space-between;
+﻿﻿.controls {
+    display: flex;
+    justify-content: space-between;
 }
-.controls select{
-    width:32px;
-    height:25px;
+
+.controls select {
+    width: 48px;
+    height: 25px;
 }
-::deep .movie-title{
-    width:50%;
+
+::deep .movie-title {
+    width: 50%;
 }
-::deep .reliase-date, .genre{
-    width:25%;
+
+::deep .release-date, .genre {
+    width: 25%;
 }

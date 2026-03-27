@@ -1,4 +1,5 @@
 ﻿@inherits LayoutComponentBase
+@using Movies.Components
 
 <div class="page">
     <div class="sidebar">
@@ -8,12 +9,24 @@
     <main>
         <div class="top-row px-4">
             <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+           
+            <button class="btn"
+                    onclick="
+                const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-bs-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                this.innerHTML = newTheme === 'dark' ? '☀︎ Light' : '☪︎ Dark';
+            ">
+                <span>☪︎ Dark</span>
+            </button>
         </div>
-
+       
         <article class="content px-4">
             @Body
         </article>
     </main>
+ 
 </div>
 
 <div id="blazor-error-ui">

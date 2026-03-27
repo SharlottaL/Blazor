@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Academy.Components.Models;
+using Academy.Models;
 
 namespace Academy.Data
 {
@@ -14,6 +14,6 @@ namespace Academy.Data
         {
         }
 
-        public DbSet<Academy.Components.Models.Students> Students { get; set; } = default!;
+        public DbSet<Academy.Models.Direction> Directions { get; set; } = default!;
     }
 }
