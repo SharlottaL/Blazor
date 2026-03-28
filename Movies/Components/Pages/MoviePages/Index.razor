@@ -45,6 +45,9 @@
         </TemplateColumn>
     <PropertyColumn Class="release-date" Sortable="true" Property="movie => movie.ReleaseDate" />
     <PropertyColumn Class="genre" Sortable="true" Property="movie => movie.Genre" />
+        <TemplateColumn Class="url" Title="URL">
+            <a href="@context.URL">@context.URL</a>
+        </TemplateColumn>
 
     @* <TemplateColumn Context="movie">
         <a href="@($"movies/edit?id={movie.Id}")">Edit</a> |
