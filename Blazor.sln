@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies", "Movies\Movies.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy", "Academy\Academy.csproj", "{1D4B9198-34AD-4EB5-920D-EC7A8ADD4329}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy2", "Academy2\Academy2.csproj", "{56E04902-36A7-4348-885E-207B1485E04F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1D4B9198-34AD-4EB5-920D-EC7A8ADD4329}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D4B9198-34AD-4EB5-920D-EC7A8ADD4329}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D4B9198-34AD-4EB5-920D-EC7A8ADD4329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56E04902-36A7-4348-885E-207B1485E04F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E04902-36A7-4348-885E-207B1485E04F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E04902-36A7-4348-885E-207B1485E04F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E04902-36A7-4348-885E-207B1485E04F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
