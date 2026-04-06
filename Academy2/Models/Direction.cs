@@ -8,6 +8,10 @@ namespace Academy2.Models
         [Key]
         [Column(TypeName = "tinyint")]
         public int direction_id { get; set; }
-        public string direction_name { get; set; }
+        [Required]
+        public  string direction_name { get; set; }
+
+        //Navigation prop
+        public ICollection<Group> Groups { get; set;  }
     }
 }
