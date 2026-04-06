@@ -11,7 +11,7 @@ namespace Academy.Models.ValidationAttributes
             if (value == null || string.IsNullOrWhiteSpace(value.ToString())) return ValidationResult.Success;
             string directionName = value.ToString();
             IDbContextFactory<AcademyContext> dbContextFactory = validationContext.GetService<IDbContextFactory<AcademyContext>>();
-            if (dbContextFactory == null) return new ValidationResult("Нэт такой животный....");
+            if (dbContextFactory == null) return new ValidationResult("Такого нет....");
             using (var context = dbContextFactory.CreateDbContext())
             {
                 bool exists = context.Directions.Any(d => d.direction_name.ToLower() == directionName.ToLower());
