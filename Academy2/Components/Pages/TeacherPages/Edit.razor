@@ -167,7 +167,13 @@ else
 	{
 		using var context = DbFactory.CreateDbContext();
 		context.Attach(Teacher!).State = EntityState.Modified;
-
+		// context.TeachersDisciplinesRelation.AddRange(NewDisciplines);
+		TeacherDisciplineRelation new_relation = new TeacherDisciplineRelation
+		{
+			discipline = NewDisciplines.First().discipline,
+			teacher = NewDisciplines.First().teacher,
+		};
+		context.TeachersDisciplinesRelation.Add(new_relation);
 		try
 		{
 			await context.SaveChangesAsync();
