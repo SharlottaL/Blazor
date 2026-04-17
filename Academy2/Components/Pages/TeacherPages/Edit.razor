@@ -158,6 +158,7 @@ else
 		/* if(NewDisciplines.Contains(newRelation)) */
 		newRelation.Teacher = Teacher;
 		newRelation.Discipline = Disciplines.Where(d => d.discipline_id == discipline).First();
+		if (NewDisciplines.Any(d => d.discipline == discipline)) return;
 		NewDisciplines.Add(newRelation);
 	}
 
