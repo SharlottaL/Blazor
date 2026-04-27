@@ -175,21 +175,6 @@ else
 		using var context = DbFactory.CreateDbContext();
 		context.Attach(Teacher!).State = EntityState.Modified;
 		newDisciplines.Update();
-		try
-		{
-			await context.SaveChangesAsync();
-		}
-		catch (DbUpdateConcurrencyException)
-		{
-			if (!TeacherExists(Teacher!.teacher_id))
-			{
-				NavigationManager.NavigateTo("notfound");
-			}
-			else
-			{
-				throw;
-			}
-		}
 		// List<TeacherDisciplineRelation> pairs = new List<TeacherDisciplineRelation>();
 		// foreach (TeacherDisciplineRelation tdr in NewDisciplines)
 		// 	pairs.Add(new TeacherDisciplineRelation { teacher = tdr.teacher, discipline = tdr.discipline });
