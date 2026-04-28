@@ -3,6 +3,7 @@
 @using Academy2.Models
 @inject IDbContextFactory<Academy2.Data.Academy2Context> DbFactory
 @inject NavigationManager NavigationManager
+@using System.ComponentModel.DataAnnotations
 @rendermode InteractiveServer
 
 <PageTitle>Edit</PageTitle>
@@ -28,8 +29,8 @@ else
 
 						<div class="mb-3">
 							<span class="text-danger">*</span>
-							<label for="last_name" class="form-label">last_name:</label>
-							<InputText id="last_name" @bind-Value="Teacher.last_name" class="form-control" aria-required="true" />
+							<label for="last_name" class="form-label"><DisplayName For="() => Teacher.last_name" /></label>
+							<InputText id="last_name" @bind-Value="Teacher.last_name" DisplayName="last_name" class="form-control" aria-required="true" />
 							<ValidationMessage For="() => Teacher.last_name" class="text-danger" />
 						</div>
 						<div class="mb-3">

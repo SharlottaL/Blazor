@@ -2,13 +2,14 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Academy2.Models
 {
-    public class Human 
+    public class Human
     {
-        
-        [Required]
+
+        [Required, Display(Name = "Фамилия")]
         public string last_name { get; set; }
         [Required]
         public string first_name { get; set; }
+        [Display(Name = "Отчество")]
         public string? middle_name { get; set; }
         [Required]
         [DataType(DataType.Date)]
@@ -17,6 +18,12 @@ namespace Academy2.Models
         public string? phone { get; set; }
         [Column(TypeName = "image")]
         public byte[]? photo { get; set; }
-       
+        public int year => DateTime.Now.Year - birth_date.Year;
+        public int Age
+        {
+            get => DateTime.Now.Month == birth_date.Month && DateTime.Now.Month == birth_date.Month  ? year : year - 1;
+        }
+
+
     }
 }
