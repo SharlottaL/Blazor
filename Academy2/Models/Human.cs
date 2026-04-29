@@ -18,10 +18,13 @@ namespace Academy2.Models
         public string? phone { get; set; }
         [Column(TypeName = "image")]
         public byte[]? photo { get; set; }
-        public int year => DateTime.Now.Year - birth_date.Year;
         public int Age
         {
-            get => DateTime.Now.Month > birth_date.Month  || DateTime.Now.Month == birth_date.Month && DateTime.Now.Day >= birth_date.Day  ? year : year - 1;
+            get
+            {
+                int year = DateTime.Now.Year - birth_date.Year;
+                return DateTime.Now.Month > birth_date.Month || DateTime.Now.Month == birth_date.Month && DateTime.Now.Day >= birth_date.Day ? year : year - 1;
+            }
         }
 
 
