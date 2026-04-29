@@ -18,15 +18,18 @@ namespace Academy2.Models
         public string? phone { get; set; }
         [Column(TypeName = "image")]
         public byte[]? photo { get; set; }
+        //public int Age
+        //{
+        //    get
+        //    {
+        //        int year = DateTime.Now.Year - birth_date.Year;
+        //        return DateTime.Now.Month > birth_date.Month || DateTime.Now.Month == birth_date.Month && DateTime.Now.Day >= birth_date.Day ? year : year - 1;
+        //    }
+        //} мой вариант
         public int Age
         {
-            get
-            {
-                int year = DateTime.Now.Year - birth_date.Year;
-                return DateTime.Now.Month > birth_date.Month || DateTime.Now.Month == birth_date.Month && DateTime.Now.Day >= birth_date.Day ? year : year - 1;
-            }
+            get => (int)((DateOnly.FromDateTime(DateTime.Now).DayNumber - birth_date.DayNumber)/365.25);
         }
-
 
     }
 }
