@@ -5,11 +5,11 @@ namespace Academy2.Models
     public class Human
     {
 
-        [Required, Display(Name = "Фамилия")]
+        //[Required, Display(Name = "Фамилия")] использование не доступно https://github.com/dotnet/aspnetcore/issues/49147
         public string last_name { get; set; }
         [Required]
         public string first_name { get; set; }
-        [Display(Name = "Отчество")]
+        //[Display(Name = "Отчество")]
         public string? middle_name { get; set; }
         [Required]
         [DataType(DataType.Date)]
@@ -25,7 +25,7 @@ namespace Academy2.Models
         //        int year = DateTime.Now.Year - birth_date.Year;
         //        return DateTime.Now.Month > birth_date.Month || DateTime.Now.Month == birth_date.Month && DateTime.Now.Day >= birth_date.Day ? year : year - 1;
         //    }
-        //} мой вариант
+        //} мой рабочий вариант 
         public int Age
         {
             get => (int)((DateOnly.FromDateTime(DateTime.Now).DayNumber - birth_date.DayNumber)/365.25);
